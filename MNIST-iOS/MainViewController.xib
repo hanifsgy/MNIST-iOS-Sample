@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="MNIST_iOS" customModuleProvider="target">
+            <connections>
+                <outlet property="drawView" destination="DuD-zQ-Fj2" id="o4I-Xw-wqK"/>
+                <outlet property="lblPredict" destination="nao-8Y-4sW" id="HCu-84-sxF"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DuD-zQ-Fj2" customClass="DrawView" customModule="MNIST_iOS" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="414" width="414" height="400"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="400" id="rtL-mT-O4c"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Output Predict" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rB5-aa-mPj">
+                    <rect key="frame" x="8" y="52" width="143.5" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="qUS-Tx-nkb"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nao-8Y-4sW">
+                    <rect key="frame" x="8" y="80" width="398" height="298"/>
+                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="100"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xam-XA-PmM">
+                    <rect key="frame" x="0.0" y="814" width="414" height="48"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Knc-Gj-Nrp">
+                            <rect key="frame" x="0.0" y="0.0" width="207" height="48"/>
+                            <color key="backgroundColor" red="0.60784313729999995" green="0.0" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal" title="Reset">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="tappedReset:" destination="-1" eventType="touchUpInside" id="8ss-fR-6iJ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bus-0s-VEY">
+                            <rect key="frame" x="207" y="0.0" width="207" height="48"/>
+                            <color key="backgroundColor" red="0.019607843140000001" green="0.62352941179999999" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal" title="Predict">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="tappedPredict:" destination="-1" eventType="touchUpInside" id="bYl-JB-tZf"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.94901960780000005" green="0.46666666670000001" blue="0.1137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="R2r-ho-33w"/>
+                    </constraints>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Draw Here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rg1-yx-hA5">
+                    <rect key="frame" x="8" y="386" width="92.5" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="Kxz-J2-qIo"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="rg1-yx-hA5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="0cj-cg-zf3"/>
+                <constraint firstItem="rg1-yx-hA5" firstAttribute="top" secondItem="nao-8Y-4sW" secondAttribute="bottom" constant="8" id="7OW-sW-u1X"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nao-8Y-4sW" secondAttribute="trailing" constant="8" id="8aa-aE-M15"/>
+                <constraint firstItem="DuD-zQ-Fj2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ESi-1T-TOY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="xam-XA-PmM" secondAttribute="bottom" id="FG7-wn-QEZ"/>
+                <constraint firstItem="xam-XA-PmM" firstAttribute="top" secondItem="DuD-zQ-Fj2" secondAttribute="bottom" id="IhJ-XF-dTX"/>
+                <constraint firstItem="nao-8Y-4sW" firstAttribute="top" secondItem="rB5-aa-mPj" secondAttribute="bottom" constant="8" id="LC3-l2-7bf"/>
+                <constraint firstAttribute="trailing" secondItem="xam-XA-PmM" secondAttribute="trailing" id="OgU-wa-f8r"/>
+                <constraint firstItem="xam-XA-PmM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="PgR-ix-YEr"/>
+                <constraint firstItem="nao-8Y-4sW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="Xm7-dM-htt"/>
+                <constraint firstItem="rB5-aa-mPj" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="euF-mc-XwC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DuD-zQ-Fj2" secondAttribute="trailing" id="gXQ-Gc-P9d"/>
+                <constraint firstItem="rB5-aa-mPj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="pcc-jc-mX9"/>
+                <constraint firstItem="DuD-zQ-Fj2" firstAttribute="top" secondItem="rg1-yx-hA5" secondAttribute="bottom" constant="8" id="zU0-F9-VDH"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>
+        </view>
+    </objects>
+</document>
